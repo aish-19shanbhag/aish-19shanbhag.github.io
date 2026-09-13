@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aishwarya Ramanath Shanbhag — Data Scientist</title>
+<meta name="description" content="Data Scientist specializing in fraud detection and financial crime risk analytics. MS Computer Science student at San José State University.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;0,8..60,700;1,8..60,400;1,8..60,500&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F6F4EF;
+    --ink:#1B2430;
+    --slate:#5B6470;
+    --line:#D8D3C7;
+    --accent:#3F6659;
+    --accent-soft:#E7ECE9;
+    --max:700px;
+  }
+  *{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Source Serif 4', Georgia, serif;
+    font-size:17px;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+  ::selection{ background:var(--accent-soft); color:var(--ink); }
+
+  .wrap{
+    max-width:var(--max);
+    margin:0 auto;
+    padding:0 24px;
+  }
+
+  a{ color:var(--ink); text-decoration-color:var(--line); text-underline-offset:3px; }
+  a:hover{ text-decoration-color:var(--accent); }
+  a:focus-visible, button:focus-visible{ outline:2px solid var(--accent); outline-offset:3px; }
+
+  .mono{ font-family:'IBM Plex Mono', ui-monospace, monospace; font-variant-numeric: tabular-nums; }
+
+  /* ---------- Header / Hero ---------- */
+  header{ padding:72px 0 40px; }
+  .name{
+    font-size:clamp(30px, 5vw, 40px);
+    font-weight:600;
+    letter-spacing:-0.01em;
+    margin:0 0 6px;
+  }
+  .role{
+    font-size:19px;
+    color:var(--accent);
+    margin:0 0 22px;
+    font-style:italic;
+  }
+  .intro{
+    color:var(--slate);
+    max-width:58ch;
+    margin:0 0 26px;
+  }
+  .links{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:13.5px;
+  }
+  .links a{ color:var(--ink); margin-right:20px; display:inline-block; }
+  .links a:last-child{ margin-right:0; }
+
+  /* ---------- Section scaffolding ---------- */
+  section{ padding:44px 0; border-top:1px solid var(--line); }
+  .section-label{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12.5px;
+    color:var(--slate);
+    letter-spacing:0.04em;
+    margin:0 0 26px;
+  }
+
+  /* ---------- Experience: ledger rows ---------- */
+  .entry{ margin-bottom:34px; }
+  .entry:last-child{ margin-bottom:0; }
+  .entry-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:baseline;
+    gap:16px;
+    flex-wrap:wrap;
+    margin-bottom:4px;
+  }
+  .entry-org{ font-weight:600; font-size:18px; }
+  .entry-org .current{
+    display:inline-block;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11px;
+    color:var(--accent);
+    border:1px solid var(--accent);
+    border-radius:3px;
+    padding:1px 6px;
+    margin-left:10px;
+    vertical-align:middle;
+    letter-spacing:0.03em;
+  }
+  .entry-date{ font-family:'IBM Plex Mono', monospace; font-size:13px; color:var(--slate); white-space:nowrap; }
+  .entry-title{ font-style:italic; color:var(--slate); font-size:15.5px; margin-bottom:12px; }
+  .ledger{ border-top:1px dashed var(--line); padding-top:10px; }
+  .ledger-row{
+    display:flex;
+    justify-content:space-between;
+    gap:18px;
+    padding:7px 0;
+    font-size:15.5px;
+  }
+  .ledger-row + .ledger-row{ border-top:1px dashed var(--line); }
+  .ledger-desc{ flex:1; }
+  .ledger-figure{
+    font-family:'IBM Plex Mono', monospace;
+    font-weight:600;
+    color:var(--accent);
+    white-space:nowrap;
+    text-align:right;
+  }
+
+  /* ---------- Projects ---------- */
+  .project{ margin-bottom:30px; }
+  .project:last-child{ margin-bottom:0; }
+  .project-head{
+    display:flex; justify-content:space-between; align-items:baseline; gap:14px; flex-wrap:wrap;
+  }
+  .project-name{ font-weight:600; font-size:17px; }
+  .project-tags{ font-family:'IBM Plex Mono', monospace; font-size:12px; color:var(--slate); }
+  .project-desc{ color:var(--slate); margin:6px 0 0; font-size:15.5px; }
+  .project-desc b{ color:var(--ink); font-weight:600; }
+
+  /* ---------- Skills ---------- */
+  .skill-row{ display:flex; gap:14px; margin-bottom:12px; flex-wrap:wrap; }
+  .skill-row:last-child{ margin-bottom:0; }
+  .skill-label{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12.5px;
+    color:var(--slate);
+    min-width:150px;
+    padding-top:2px;
+  }
+  .skill-values{ flex:1; min-width:220px; color:var(--ink); font-size:15.5px; }
+
+  /* ---------- Education ---------- */
+  .edu-entry{ display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap; margin-bottom:18px; }
+  .edu-entry:last-child{ margin-bottom:0; }
+  .edu-name{ font-weight:600; }
+  .edu-detail{ color:var(--slate); font-size:15px; }
+  .edu-date{ font-family:'IBM Plex Mono', monospace; font-size:13px; color:var(--slate); white-space:nowrap; }
+
+  footer{
+    padding:40px 0 72px;
+    color:var(--slate);
+    font-size:14px;
+    font-family:'IBM Plex Mono', monospace;
+  }
+
+  @media (max-width:480px){
+    header{ padding:48px 0 32px; }
+    .entry-head{ flex-direction:column; align-items:flex-start; gap:2px; }
+    .skill-label{ min-width:100%; }
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <header>
+    <p class="name">Aishwarya Ramanath Shanbhag</p>
+    <p class="role">Data Scientist — Fraud Detection &amp; Financial Crime Risk</p>
+    <p class="intro">MS Computer Science student at San José State University with 4+ years of experience building fraud detection models and financial crime risk systems across two banks. I like problems where a model's mistake has a real dollar cost.</p>
+    <div class="links">
+      <a href="https://www.linkedin.com/in/aishwarya-ramanath-shanbhag-452255185/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/aish-19shanbhag" target="_blank" rel="noopener">GitHub</a>
+      <a href="mailto:aishwaryaramanath.shanbhag@sjsu.edu">Email</a>
+      <a href="resume/Aishwarya_DataScientist_Resume.pdf" target="_blank" rel="noopener">Resume (PDF)</a>
+    </div>
+  </header>
+
+  <section id="experience">
+    <p class="section-label">experience</p>
+
+    <div class="entry">
+      <div class="entry-head">
+        <span class="entry-org">NatWest Group <span class="current">current</span></span>
+        <span class="entry-date">Jun 2025 – Jul 2026</span>
+      </div>
+      <p class="entry-title">Data Scientist — Machine Learning, Fraud Detection &amp; Prevention Squad · Bengaluru, India</p>
+      <div class="ledger">
+        <div class="ledger-row">
+          <span class="ledger-desc">Optimized the TMX ThreatMetrix onboarding fraud model</span>
+          <span class="ledger-figure">−$94,000 / mo</span>
+        </div>
+        <div class="ledger-row">
+          <span class="ledger-desc">Reduced false positives on the same model</span>
+          <span class="ledger-figure">−58%</span>
+        </div>
+        <div class="ledger-row">
+          <span class="ledger-desc">Lifted fraud capture rate after the update</span>
+          <span class="ledger-figure">+143%</span>
+        </div>
+        <div class="ledger-row">
+          <span class="ledger-desc">Built model monitoring dashboards in Amazon QuickSight; ran bias &amp; silent-period evaluations pre-deployment</span>
+          <span class="ledger-figure">—</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="entry-head">
+        <span class="entry-org">Societe Generale</span>
+        <span class="entry-date">Aug 2022 – May 2025</span>
+      </div>
+      <p class="entry-title">Associate Data Scientist — Compliance Data Science &amp; Financial Crime Client Risk Rating · Bengaluru, India</p>
+      <div class="ledger">
+        <div class="ledger-row">
+          <span class="ledger-desc">Led FCCR V3 model risk management review across a 15M+ client portfolio</span>
+          <span class="ledger-figure">15M+ clients</span>
+        </div>
+        <div class="ledger-row">
+          <span class="ledger-desc">Engineered Logit &amp; Boosted C5.0 models; monitored 8+ KPIs including PSI to catch drift</span>
+          <span class="ledger-figure">−EUR 2M penalties</span>
+        </div>
+        <div class="ledger-row">
+          <span class="ledger-desc">Built a BERTopic NLP pipeline for KYC comment analysis</span>
+          <span class="ledger-figure">−2 FTEs manual work</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="entry-head">
+        <span class="entry-org">Hewlett Packard Enterprise</span>
+        <span class="entry-date">Feb 2022 – Aug 2022</span>
+      </div>
+      <p class="entry-title">OCA Tool Developer Intern · Chennai, India</p>
+      <div class="ledger">
+        <div class="ledger-row">
+          <span class="ledger-desc">Shipped search, cloning &amp; template features for the OCA configurator platform</span>
+          <span class="ledger-figure">−25% config time</span>
+        </div>
+        <div class="ledger-row">
+          <span class="ledger-desc">Built breakout, filtering &amp; attribute-selection modules from the ground up</span>
+          <span class="ledger-figure">—</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <p class="section-label">projects</p>
+
+    <div class="project">
+      <div class="project-head">
+        <span class="project-name">Intrusion Detection Using Ensemble Techniques</span>
+        <span class="project-tags">python · xgboost · ensemble learning</span>
+      </div>
+      <p class="project-desc">Led an ensemble classification system (Maximum Voting: Naive Bayes, Decision Trees, XGBoost) reaching <b>99.93% accuracy</b> and an ultra-low <b>0.07% false-positive rate</b>.</p>
+    </div>
+
+    <div class="project">
+      <div class="project-head">
+        <span class="project-name">Social Distance Detection using YOLOv3</span>
+        <span class="project-tags">python · opencv · deep learning</span>
+      </div>
+      <p class="project-desc">Real-time proximity-risk detection with YOLOv3 and SSD MobileNet, using perspective transformation for bird's-eye distance calibration. <b>92% accuracy</b> (pretrained), <b>95%</b> after transfer learning.</p>
+    </div>
+
+    <div class="project">
+      <div class="project-head">
+        <span class="project-name">House Price Prediction Model</span>
+        <span class="project-tags">python · regression analysis</span>
+      </div>
+      <p class="project-desc">Multi-model regression pipeline (Linear, Multiple Linear, Lasso, Gradient Boosting) on the King County housing dataset with geospatial heat-map analysis; Lasso gave the best RMSE and R².</p>
+    </div>
+  </section>
+
+  <section id="skills">
+    <p class="section-label">skills</p>
+    <div class="skill-row">
+      <span class="skill-label">languages</span>
+      <span class="skill-values">Python (Pandas, NumPy, Scikit-learn), SQL, R</span>
+    </div>
+    <div class="skill-row">
+      <span class="skill-label">ml &amp; statistics</span>
+      <span class="skill-values">Supervised &amp; Unsupervised Learning, Ensemble Methods (XGBoost), Anomaly Detection, NLP, A/B Testing, Model Validation</span>
+    </div>
+    <div class="skill-row">
+      <span class="skill-label">risk &amp; compliance</span>
+      <span class="skill-values">Fraud Detection, Financial Crime Risk Rating, AML/KYC, Regulatory Compliance, Model Risk Management</span>
+    </div>
+    <div class="skill-row">
+      <span class="skill-label">data &amp; cloud</span>
+      <span class="skill-values">ETL Pipelines, Spark, Snowflake, AWS, Amazon SageMaker, Amazon QuickSight, MySQL</span>
+    </div>
+  </section>
+
+  <section id="education">
+    <p class="section-label">education</p>
+    <div class="edu-entry">
+      <div>
+        <div class="edu-name">San José State University</div>
+        <div class="edu-detail">Master of Science, Computer Science</div>
+      </div>
+      <div class="edu-date">Aug 2026 – May 2028</div>
+    </div>
+    <div class="edu-entry">
+      <div>
+        <div class="edu-name">PES University</div>
+        <div class="edu-detail">Bachelor of Technology, Computer Science &amp; Engineering · GPA 3.6/4.0</div>
+      </div>
+      <div class="edu-date">Aug 2018 – May 2022</div>
+    </div>
+  </section>
+
+  <footer>
+    © 2026 Aishwarya Ramanath Shanbhag · built with plain HTML/CSS
+  </footer>
+
+</div>
+</body>
+</html>
