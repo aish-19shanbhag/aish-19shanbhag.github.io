@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<script>document.documentElement.classList.add('js');</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Aishwarya Ramanath Shanbhag | Data Scientist</title>
@@ -10,12 +11,12 @@
 <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;0,8..60,700;1,8..60,400;1,8..60,500&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root{
-    --paper:#F6F4EF;
-    --ink:#1B2430;
-    --slate:#5B6470;
-    --line:#D8D3C7;
-    --accent:#3F6659;
-    --accent-soft:#E7ECE9;
+    --paper:#F7F8FA;
+    --ink:#10233F;
+    --slate:#5B6478;
+    --line:#E3E6EC;
+    --accent:#B8862C;
+    --accent-soft:#F5EBD8;
     --max:760px;
   }
   *{ box-sizing:border-box; }
@@ -35,6 +36,12 @@
   a:hover{ text-decoration-color:var(--accent); }
   a:focus-visible, button:focus-visible{ outline:2px solid var(--accent); outline-offset:3px; }
   .mono{ font-family:'IBM Plex Mono', ui-monospace, monospace; font-variant-numeric: tabular-nums; }
+
+  .js .reveal{ opacity:0; transform:translateY(14px); transition:opacity 0.6s ease, transform 0.6s ease; }
+  .js .reveal.in{ opacity:1; transform:translateY(0); }
+  @media (prefers-reduced-motion: reduce){
+    .js .reveal{ opacity:1; transform:none; transition:none; }
+  }
 
   /* ---------- Hero ---------- */
   header{ padding:72px 0 44px; }
@@ -92,13 +99,14 @@
   .edu-date{ font-family:'IBM Plex Mono', monospace; font-size:12.5px; color:var(--slate); margin-top:8px; }
 
   /* ---------- Experience ---------- */
-  .entry{ display:grid; grid-template-columns:170px 1fr; gap:24px; margin-bottom:38px; }
+  .entry{ display:grid; grid-template-columns:170px 1fr; gap:24px; margin-bottom:38px; padding:16px; margin-left:-16px; margin-right:-16px; border-radius:4px; transition:background 0.25s ease; }
+  .entry:hover{ background:var(--accent-soft); }
   .entry:last-child{ margin-bottom:0; }
   .entry-meta{ font-family:'IBM Plex Mono', monospace; font-size:12.5px; color:var(--slate); }
   .entry-stamp{
-    display:inline-block; margin-top:8px;
-    font-family:'IBM Plex Mono', monospace; font-size:11px;
-    border:1px solid var(--line); border-radius:3px; padding:2px 7px; color:var(--ink);
+    display:block; margin-top:10px;
+    font-family:'Source Serif 4', serif; font-weight:700; font-size:19px;
+    color:var(--ink); font-style:normal; line-height:1.3;
   }
   .entry-role{ font-weight:600; font-size:17.5px; }
   .entry-org{ color:var(--accent); font-style:italic; font-size:15px; margin:2px 0 12px; }
@@ -114,14 +122,16 @@
 
   /* ---------- What I Do ---------- */
   .what-grid{ display:grid; gap:28px; }
-  .what-card{ }
+  .what-card{ padding:16px; margin:0 -16px; border-radius:4px; transition:background 0.25s ease; }
+  .what-card:hover{ background:var(--accent-soft); }
   .what-num{ font-family:'IBM Plex Mono', monospace; font-size:12px; color:var(--accent); margin-bottom:8px; }
   .what-card h3{ font-size:19px; font-weight:600; margin:0 0 8px; line-height:1.4; }
   .what-card p{ color:var(--slate); margin:0; font-size:15.5px; }
 
   /* ---------- Projects ---------- */
-  .project{ border-top:1px solid var(--line); padding:26px 0; }
-  .project:first-child{ border-top:none; padding-top:0; }
+  .project{ border-top:1px solid var(--line); padding:26px 16px; margin:0 -16px; border-radius:4px; transition:background 0.25s ease; }
+  .project:hover{ background:var(--accent-soft); }
+  .project:first-child{ border-top:none; padding-top:26px; }
   .project-head{ display:flex; justify-content:space-between; align-items:baseline; gap:14px; flex-wrap:wrap; }
   .project-num{ font-family:'IBM Plex Mono', monospace; font-size:12px; color:var(--slate); }
   .project-name{ font-weight:600; font-size:17.5px; margin:4px 0 8px; }
@@ -151,7 +161,7 @@
 
   <header>
     <p class="eyebrow">Based in San Jose, CA</p>
-    <h1 class="name">Aishwarya Ramanath<br><em>Shanbhag.</em></h1>
+    <h1 class="name">Aishwarya Ramanath Shanbhag</h1>
     <p class="role">Data Scientist — fraud detection and financial crime risk analytics, with 4+ years across two banks. Now pursuing an MS in Computer Science.</p>
     <div class="hero-actions">
       <a href="resume/Aishwarya_DataScientist_Resume.pdf" target="_blank" rel="noopener" class="btn-primary">Download Resume</a>
@@ -163,7 +173,7 @@
     </div>
   </header>
 
-  <section id="education">
+  <section id="education" class="reveal">
     <p class="section-label">Education</p>
     <div class="edu-grid">
       <div class="edu-card">
@@ -179,7 +189,7 @@
     </div>
   </section>
 
-  <section id="experience">
+  <section id="experience" class="reveal">
     <p class="section-label">Experience</p>
     <h2 class="section-title">Where I've <em>Worked.</em></h2>
 
@@ -192,9 +202,9 @@
         <div class="entry-role">Data Scientist</div>
         <div class="entry-org">Machine Learning, Fraud Detection &amp; Prevention Squad</div>
         <ul class="entry-bullets">
-          <li>Optimized the TMX ThreatMetrix onboarding fraud model, cutting <b>$94,000 in monthly fraud losses</b>, reducing <b>false positives by 58%</b>, and lifting <b>fraud capture rates by 143%</b>.</li>
-          <li>Built model monitoring dashboards in Amazon QuickSight, embedding financial KPIs and feature distribution shifts to ensure continuous algorithmic stability.</li>
-          <li>Executed model evaluations, silent-period testing, and bias analyses pre-deployment to assess model drift and fairness, partnering with cross-functional stakeholders on fraud strategy.</li>
+          <li>Optimized the <b>TMX ThreatMetrix</b> onboarding fraud model, cutting <b>$94,000 in monthly fraud losses</b>, reducing <b>false positives by 58%</b>, and lifting <b>fraud capture rates by 143%</b>.</li>
+          <li>Built <b>model monitoring dashboards</b> in <b>Amazon QuickSight</b>, embedding financial KPIs and feature distribution shifts to ensure continuous algorithmic stability.</li>
+          <li>Executed <b>model evaluations</b>, <b>silent-period testing</b>, and <b>bias analyses</b> pre-deployment to assess model drift and fairness, partnering with cross-functional stakeholders on fraud strategy.</li>
         </ul>
         <div class="tags"><span class="tag">Python</span><span class="tag">Amazon SageMaker</span><span class="tag">QuickSight</span><span class="tag">Fraud Detection</span></div>
       </div>
@@ -209,9 +219,9 @@
         <div class="entry-role">Associate Data Scientist</div>
         <div class="entry-org">Compliance Data Science &amp; Financial Crime Client Risk Rating</div>
         <ul class="entry-bullets">
-          <li>Led validation of FCCR V3 Ongoing Monitoring models as part of Model Risk Management (MRM) review, ensuring regulatory compliance and algorithmic integrity for a portfolio of <b>15 million+ retail banking clients</b>.</li>
-          <li>Engineered Nested Dichotomized Logit and Boosted C5.0 models, executing 3 monitoring cycles across 8+ KPIs including PSI to catch data drift, contributing to a <b>EUR 2 million reduction</b> in regulatory penalties.</li>
-          <li>Built a BERTopic NLP pipeline to automate text mining and streamline KYC client and business comment analysis, eliminating <b>2 FTEs</b> of manual review overhead.</li>
+          <li>Led validation of <b>FCCR V3 Ongoing Monitoring models</b> as part of <b>Model Risk Management (MRM)</b> review, ensuring regulatory compliance and algorithmic integrity for a portfolio of <b>15 million+ retail banking clients</b>.</li>
+          <li>Engineered <b>Nested Dichotomized Logit</b> and <b>Boosted C5.0</b> models, executing 3 monitoring cycles across 8+ KPIs including <b>PSI</b> to catch data drift, contributing to a <b>EUR 2 million reduction</b> in regulatory penalties.</li>
+          <li>Built a <b>BERTopic NLP pipeline</b> to automate text mining and streamline <b>KYC</b> client and business comment analysis, eliminating <b>2 FTEs</b> of manual review overhead.</li>
         </ul>
         <div class="tags"><span class="tag">Logit / C5.0</span><span class="tag">NLP</span><span class="tag">AML/KYC</span><span class="tag">Model Risk</span></div>
       </div>
@@ -220,22 +230,21 @@
     <div class="entry">
       <div class="entry-meta">
         Feb 2022 – Aug 2022<br>Chennai, India
-        <div class="entry-stamp">HPE</div>
+        <div class="entry-stamp">Hewlett Packard Enterprise</div>
       </div>
       <div>
         <div class="entry-role">OCA Tool Developer Intern</div>
-        <div class="entry-org">Hewlett Packard Enterprise</div>
         <ul class="entry-bullets">
-          <li>Built and maintained backend software modules for One Config Advanced (OCA), a web-based configurator platform used across engineering teams, improving system reliability through hands-on debugging.</li>
-          <li>Shipped new platform features, including search and cloning functionality plus reusable configuration templates, cutting <b>configuration time by 25%</b> for end users.</li>
-          <li>Built breakout, filtering, and attribute-selection modules from the ground up, designing the underlying logic and testing each feature thoroughly to increase user productivity.</li>
+          <li>Built and maintained <b>backend software modules</b> for <b>One Config Advanced (OCA)</b>, a web-based configurator platform used across engineering teams, improving system reliability through hands-on debugging.</li>
+          <li>Shipped new platform features, including <b>search and cloning functionality</b> plus reusable configuration templates, cutting <b>configuration time by 25%</b> for end users.</li>
+          <li>Built <b>breakout, filtering, and attribute-selection modules</b> from the ground up, designing the underlying logic and testing each feature thoroughly to increase user productivity.</li>
         </ul>
         <div class="tags"><span class="tag">Backend Development</span><span class="tag">Debugging</span><span class="tag">REST</span></div>
       </div>
     </div>
   </section>
 
-  <section id="what">
+  <section id="what" class="reveal">
     <p class="section-label">What I Do</p>
     <div class="what-grid">
       <div class="what-card">
@@ -256,7 +265,7 @@
     </div>
   </section>
 
-  <section id="projects">
+  <section id="projects" class="reveal">
     <p class="section-label">Projects</p>
     <h2 class="section-title">Things I've <em>Built.</em></h2>
 
@@ -266,8 +275,8 @@
       </div>
       <div class="project-name">Intrusion Detection Using Ensemble Techniques</div>
       <ul class="entry-bullets">
-        <li>Served as Team Lead for an ensemble-based security analytics platform, delivering a <b>99.93% risk detection accuracy rate</b> and an ultra-low <b>0.07% false positive rate</b>.</li>
-        <li>Combined a Maximum Voting Ensemble with Gaussian Naive Bayes, Decision Trees, and XGBoost, directing feature selection and hyperparameter tuning for enterprise-level scalability.</li>
+        <li>Served as <b>Team Lead</b> for an ensemble-based security analytics platform, delivering a <b>99.93% risk detection accuracy rate</b> and an ultra-low <b>0.07% false positive rate</b>.</li>
+        <li>Combined a <b>Maximum Voting Ensemble</b> with <b>Gaussian Naive Bayes</b>, <b>Decision Trees</b>, and <b>XGBoost</b>, directing feature selection and hyperparameter tuning for enterprise-level scalability.</li>
         <li>Benchmarked ensemble performance against individual base classifiers, demonstrating consistent accuracy gains from the ensemble approach.</li>
       </ul>
       <div class="tags"><span class="tag">Python</span><span class="tag">XGBoost</span><span class="tag">Ensemble Learning</span></div>
@@ -279,8 +288,8 @@
       </div>
       <div class="project-name">Social Distance Detection using YOLOv3</div>
       <ul class="entry-bullets">
-        <li>Built a real-time social distancing system with YOLOv3 and SSD MobileNet detection models via a Streamlit interface.</li>
-        <li>Applied perspective transformation for bird's-eye view mapping and calibrated Euclidean distance to classify individuals into high, low, and no-risk zones.</li>
+        <li>Built a real-time social distancing system with <b>YOLOv3</b> and <b>SSD MobileNet</b> detection models via a <b>Streamlit</b> interface.</li>
+        <li>Applied <b>perspective transformation</b> for bird's-eye view mapping and calibrated <b>Euclidean distance</b> to classify individuals into high, low, and no-risk zones.</li>
         <li>Achieved <b>92% detection accuracy</b> with a pre-trained model, improving to <b>95%</b> with transfer learning, and <b>95% tracking accuracy</b> for proximity risk classification.</li>
       </ul>
       <div class="tags"><span class="tag">Python</span><span class="tag">OpenCV</span><span class="tag">Deep Learning</span></div>
@@ -292,15 +301,15 @@
       </div>
       <div class="project-name">House Price Prediction Model</div>
       <ul class="entry-bullets">
-        <li>Engineered a multi-model regression pipeline (Linear, Multiple Linear, Lasso, Gradient Boosting) on the King County housing dataset, incorporating 15+ features including square footage, location, and property condition.</li>
-        <li>Applied geospatial visualization (heat maps) and correlation analysis to uncover regional pricing patterns, informing feature selection across the modeling pipeline.</li>
-        <li>Evaluated model performance using RMSE, R², and adjusted R² across cross-validation folds, identifying Lasso Regression as the most reliable model for real estate price forecasting.</li>
+        <li>Engineered a <b>multi-model regression pipeline</b> (Linear, Multiple Linear, Lasso, Gradient Boosting) on the King County housing dataset, incorporating 15+ features including square footage, location, and property condition.</li>
+        <li>Applied <b>geospatial visualization</b> (heat maps) and <b>correlation analysis</b> to uncover regional pricing patterns, informing feature selection across the modeling pipeline.</li>
+        <li>Evaluated model performance using <b>RMSE</b>, <b>R²</b>, and adjusted R² across cross-validation folds, identifying <b>Lasso Regression</b> as the most reliable model for real estate price forecasting.</li>
       </ul>
       <div class="tags"><span class="tag">Python</span><span class="tag">Regression Analysis</span></div>
     </div>
   </section>
 
-  <section id="contact">
+  <section id="contact" class="reveal">
     <p class="section-label">Get In Touch</p>
     <p class="contact-title">Let's <em>Talk.</em></p>
     <p class="contact-sub">Reach out — I'd love to connect.</p>
@@ -318,5 +327,11 @@
   </footer>
 
 </div>
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
 </body>
 </html>
