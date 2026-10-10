@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>document.documentElement.classList.add('js');</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aishwarya Ramanath Shanbhag | Data Scientist</title>
+<meta name="description" content="Data Scientist specializing in fraud detection and financial crime risk analytics. MS Computer Science student at San José State University.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;0,8..60,700;1,8..60,400;1,8..60,500&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F7F8FA;
+    --ink:#10233F;
+    --slate:#5B6478;
+    --line:#E3E6EC;
+    --accent:#B8862C;
+    --accent-soft:#F5EBD8;
+    --max:760px;
+  }
+  *{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Source Serif 4', Georgia, serif;
+    font-size:17px;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+  ::selection{ background:var(--accent-soft); color:var(--ink); }
+  .wrap{ max-width:var(--max); margin:0 auto; padding:0 24px; }
+  a{ color:var(--ink); text-decoration-color:var(--line); text-underline-offset:3px; }
+  a:hover{ text-decoration-color:var(--accent); }
+  a:focus-visible, button:focus-visible{ outline:2px solid var(--accent); outline-offset:3px; }
+  .mono{ font-family:'IBM Plex Mono', ui-monospace, monospace; font-variant-numeric: tabular-nums; }
+
+  .js .reveal{ opacity:0; transform:translateY(14px); transition:opacity 0.6s ease, transform 0.6s ease; }
+  .js .reveal.in{ opacity:1; transform:translateY(0); }
+  @media (prefers-reduced-motion: reduce){
+    .js .reveal{ opacity:1; transform:none; transition:none; }
+  }
+
+  /* ---------- Hero ---------- */
+  header{ padding:72px 0 44px; }
+  .eyebrow{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12.5px;
+    color:var(--accent);
+    letter-spacing:0.04em;
+    margin:0 0 14px;
+  }
+  .name{
+    font-size:clamp(34px, 6vw, 46px);
+    font-weight:600;
+    letter-spacing:-0.01em;
+    margin:0 0 6px;
+  }
+  .name em{ font-style:italic; color:var(--accent); }
+  .role{ font-size:19px; color:var(--slate); margin:0 0 26px; max-width:56ch; }
+  .hero-actions{ display:flex; align-items:center; gap:22px; flex-wrap:wrap; }
+  .btn-primary{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:13.5px;
+    background:var(--ink);
+    color:var(--paper) !important;
+    padding:10px 18px;
+    border-radius:2px;
+    text-decoration:none;
+  }
+  .btn-primary:hover{ background:var(--accent); }
+  .hero-links{ font-family:'IBM Plex Mono', monospace; font-size:13.5px; }
+  .hero-links a{ margin-right:18px; }
+  .hero-links a:last-child{ margin-right:0; }
+
+  /* ---------- Section scaffolding ---------- */
+  section{ padding:44px 0; border-top:1px solid var(--line); }
+  .section-label{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12.5px;
+    color:var(--slate);
+    letter-spacing:0.04em;
+    margin:0 0 8px;
+  }
+  .section-title{
+    font-size:clamp(22px, 3.4vw, 28px);
+    font-weight:600;
+    margin:0 0 28px;
+  }
+  .section-title em{ font-style:italic; color:var(--accent); }
+
+  /* ---------- Education ---------- */
+  .edu-grid{ display:grid; grid-template-columns:1fr 1fr; gap:24px; }
+  .edu-card{ border-top:2px solid var(--ink); padding-top:12px; }
+  .edu-degree{ font-weight:600; font-size:16.5px; }
+  .edu-school{ color:var(--slate); font-size:15px; margin-top:2px; }
+  .edu-date{ font-family:'IBM Plex Mono', monospace; font-size:12.5px; color:var(--slate); margin-top:8px; }
+
+  /* ---------- Experience ---------- */
+  .entry{ display:grid; grid-template-columns:170px 1fr; gap:24px; margin-bottom:38px; padding:16px; margin-left:-16px; margin-right:-16px; border-radius:4px; transition:background 0.25s ease; }
+  .entry:hover{ background:var(--accent-soft); }
+  .entry:last-child{ margin-bottom:0; }
+  .entry-meta{ font-family:'IBM Plex Mono', monospace; font-size:12.5px; color:var(--slate); }
+  .entry-stamp{
+    display:block; margin-top:10px;
+    font-family:'Source Serif 4', serif; font-weight:700; font-size:19px;
+    color:var(--ink); font-style:normal; line-height:1.3;
+  }
+  .entry-role{ font-weight:600; font-size:17.5px; }
+  .entry-org{ color:var(--accent); font-style:italic; font-size:15px; margin:2px 0 12px; }
+  .entry-bullets{ margin:0 0 14px; padding-left:18px; color:var(--ink); }
+  .entry-bullets li{ margin-bottom:8px; font-size:15.5px; }
+  .entry-bullets li:last-child{ margin-bottom:0; }
+  .tags{ display:flex; flex-wrap:wrap; gap:8px; }
+  .tag{
+    font-family:'IBM Plex Mono', monospace; font-size:11.5px;
+    background:var(--accent-soft); color:var(--accent);
+    border-radius:3px; padding:3px 8px;
+  }
+
+  /* ---------- What I Do ---------- */
+  .what-grid{ display:grid; gap:28px; }
+  .what-card{ padding:16px; margin:0 -16px; border-radius:4px; transition:background 0.25s ease; }
+  .what-card:hover{ background:var(--accent-soft); }
+  .what-num{ font-family:'IBM Plex Mono', monospace; font-size:12px; color:var(--accent); margin-bottom:8px; }
+  .what-card h3{ font-size:19px; font-weight:600; margin:0 0 8px; line-height:1.4; }
+  .what-card p{ color:var(--slate); margin:0; font-size:15.5px; }
+
+  /* ---------- Projects ---------- */
+  .project{ border-top:1px solid var(--line); padding:26px 16px; margin:0 -16px; border-radius:4px; transition:background 0.25s ease; }
+  .project:hover{ background:var(--accent-soft); }
+  .project:first-child{ border-top:none; padding-top:26px; }
+  .project-head{ display:flex; justify-content:space-between; align-items:baseline; gap:14px; flex-wrap:wrap; }
+  .project-num{ font-family:'IBM Plex Mono', monospace; font-size:12px; color:var(--slate); }
+  .project-name{ font-weight:600; font-size:17.5px; margin:4px 0 8px; }
+  .project-desc{ color:var(--slate); margin:0 0 12px; font-size:15.5px; }
+  .project-desc b{ color:var(--ink); font-weight:600; }
+
+  /* ---------- Contact ---------- */
+  .contact-title{ font-size:clamp(26px,4vw,32px); font-weight:600; margin:0 0 10px; }
+  .contact-title em{ font-style:italic; color:var(--accent); }
+  .contact-sub{ color:var(--slate); margin:0 0 24px; }
+  .contact-links{ font-family:'IBM Plex Mono', monospace; font-size:14px; }
+  .contact-links a{ margin-right:22px; display:inline-block; }
+  .contact-links a.btn-primary{ margin-right:0; }
+
+  footer{ padding:36px 0 72px; color:var(--slate); font-size:13.5px; font-family:'IBM Plex Mono', monospace; }
+  footer p{ margin:2px 0; }
+
+  @media (max-width:600px){
+    .edu-grid{ grid-template-columns:1fr; }
+    .entry{ grid-template-columns:1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <header>
+    <p class="eyebrow">Based in San Jose, CA</p>
+    <h1 class="name">Aishwarya Ramanath Shanbhag</h1>
+    <p class="role">Data Scientist specializing in fraud detection and financial crime risk analytics, with 4+ years across two banks. Now pursuing an MS in Computer Science at San José State University.</p>
+    <div class="hero-actions">
+      <a href="resume/Aishwarya_DataScientist_Resume.pdf" target="_blank" rel="noopener" class="btn-primary">Download Resume</a>
+      <div class="hero-links">
+        <a href="https://www.linkedin.com/in/aishwarya-ramanath-shanbhag-452255185/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://github.com/aish-19shanbhag" target="_blank" rel="noopener">GitHub</a>
+        <a href="mailto:aishwaryaramanath.shanbhag@sjsu.edu">Email</a>
+      </div>
+    </div>
+  </header>
+
+  <section id="education" class="reveal">
+    <p class="section-label">Education</p>
+    <div class="edu-grid">
+      <div class="edu-card">
+        <div class="edu-degree">M.S. Computer Science</div>
+        <div class="edu-school">San José State University</div>
+        <div class="edu-date">Aug 2026 – May 2028 · San Jose, CA</div>
+      </div>
+      <div class="edu-card">
+        <div class="edu-degree">B.Tech. Computer Science &amp; Engineering</div>
+        <div class="edu-school">PES University · GPA 3.6/4.0</div>
+        <div class="edu-date">Aug 2018 – May 2022 · Bengaluru, India</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience" class="reveal">
+    <p class="section-label">Experience</p>
+    <h2 class="section-title">Where I've <em>Worked.</em></h2>
+
+    <div class="entry">
+      <div class="entry-meta">
+        Jun 2025 – Jul 2026<br>Bengaluru, India
+        <div class="entry-stamp">NatWest Group</div>
+      </div>
+      <div>
+        <div class="entry-role">Data Scientist</div>
+        <div class="entry-org">Machine Learning, Fraud Detection &amp; Prevention Squad</div>
+        <ul class="entry-bullets">
+          <li>Optimized the <b>TMX ThreatMetrix</b> onboarding fraud model, cutting <b>$94,000 in monthly fraud losses</b>, reducing <b>false positives by 58%</b>, and lifting <b>fraud capture rates by 143%</b>.</li>
+          <li>Built <b>model monitoring dashboards</b> in <b>Amazon QuickSight</b>, embedding financial KPIs and feature distribution shifts to ensure continuous algorithmic stability.</li>
+          <li>Executed <b>model evaluations</b>, <b>silent-period testing</b>, and <b>bias analyses</b> pre-deployment to assess model drift and fairness, partnering with cross-functional stakeholders on fraud strategy.</li>
+        </ul>
+        <div class="tags"><span class="tag">Python</span><span class="tag">Amazon SageMaker</span><span class="tag">QuickSight</span><span class="tag">Fraud Detection</span></div>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="entry-meta">
+        Aug 2022 – May 2025<br>Bengaluru, India
+        <div class="entry-stamp">Societe Generale</div>
+      </div>
+      <div>
+        <div class="entry-role">Associate Data Scientist</div>
+        <div class="entry-org">Compliance Data Science &amp; Financial Crime Client Risk Rating</div>
+        <ul class="entry-bullets">
+          <li>Led validation of <b>FCCR V3 Ongoing Monitoring models</b> as part of <b>Model Risk Management (MRM)</b> review, ensuring regulatory compliance and algorithmic integrity for a portfolio of <b>15 million+ retail banking clients</b>.</li>
+          <li>Engineered <b>Nested Dichotomized Logit</b> and <b>Boosted C5.0</b> models, executing 3 monitoring cycles across 8+ KPIs including <b>PSI</b> to catch data drift, contributing to a <b>EUR 2 million reduction</b> in regulatory penalties.</li>
+          <li>Built a <b>BERTopic NLP pipeline</b> to automate text mining and streamline <b>KYC</b> client and business comment analysis, eliminating <b>2 FTEs</b> of manual review overhead.</li>
+        </ul>
+        <div class="tags"><span class="tag">Logit / C5.0</span><span class="tag">NLP</span><span class="tag">AML/KYC</span><span class="tag">Model Risk</span></div>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="entry-meta">
+        Feb 2022 – Aug 2022<br>Chennai, India
+        <div class="entry-stamp">Hewlett Packard Enterprise</div>
+      </div>
+      <div>
+        <div class="entry-role">OCA Tool Developer Intern</div>
+        <ul class="entry-bullets">
+          <li>Built and maintained <b>backend software modules</b> for <b>One Config Advanced (OCA)</b>, a web-based configurator platform used across engineering teams, improving system reliability through hands-on debugging.</li>
+          <li>Shipped new platform features, including <b>search and cloning functionality</b> plus reusable configuration templates, cutting <b>configuration time by 25%</b> for end users.</li>
+          <li>Built <b>breakout, filtering, and attribute-selection modules</b> from the ground up, designing the underlying logic and testing each feature thoroughly to increase user productivity.</li>
+        </ul>
+        <div class="tags"><span class="tag">Backend Development</span><span class="tag">Debugging</span><span class="tag">REST</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="what" class="reveal">
+    <p class="section-label">What I Do</p>
+    <div class="what-grid">
+      <div class="what-card">
+        <div class="what-num">Fraud &amp; Risk Modeling</div>
+        <h3>I build models that catch fraud before it costs real money</h3>
+        <p>From onboarding fraud classifiers to ensemble detection systems, I work where a model's false negative has a direct dollar cost, and I optimize for that rather than just accuracy on paper.</p>
+      </div>
+      <div class="what-card">
+        <div class="what-num">Production ML &amp; Systems</div>
+        <h3>I take models from notebook to something a business actually runs on</h3>
+        <p>I've shipped model updates through Amazon SageMaker, built the APIs and monitoring dashboards that keep them accountable in production, and written the backend features that make internal tools usable at scale.</p>
+      </div>
+      <div class="what-card">
+        <div class="what-num">Model Governance &amp; Compliance</div>
+        <h3>I make sure models hold up under regulatory scrutiny</h3>
+        <p>I've led model risk management reviews, monitored population stability across live models, and built the KYC/AML pipelines that keep a 15M+ client portfolio compliant and defensible when regulators ask questions.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" class="reveal">
+    <p class="section-label">Projects</p>
+    <h2 class="section-title">Things I've <em>Built.</em></h2>
+
+    <div class="project">
+      <div class="project-head">
+        <span class="project-num">01</span>
+      </div>
+      <div class="project-name"><a href="https://github.com/aish-19shanbhag/intrusion-detection-ensemble" target="_blank" rel="noopener">Intrusion Detection Using Ensemble Techniques</a></div>
+      <ul class="entry-bullets">
+        <li>Led a team building a multi-class network intrusion detector on NSL-KDD: a <b>Maximum Voting Ensemble</b> of <b>Gaussian Naive Bayes</b>, a <b>Decision Tree</b> and <b>XGBoost</b>.</li>
+        <li>Reaches <b>99.91% accuracy</b> with a <b>0.06% false positive rate</b> on held-out traffic, using mutual-information feature selection (41 to 30 features) and cross-validated tuning.</li>
+        <li>Benchmarked against every base classifier; the ensemble scores highest on the harder official NSL-KDD test set. Scores a connection in about <b>5 ms</b>. Streamlit demo, tests and a one-click Colab notebook.</li>
+      </ul>
+      <div class="tags"><span class="tag">Python</span><span class="tag">XGBoost</span><span class="tag">scikit-learn</span><span class="tag">Ensemble Learning</span></div>
+    </div>
+
+    <div class="project">
+      <div class="project-head">
+        <span class="project-num">02</span>
+      </div>
+      <div class="project-name"><a href="https://github.com/aish-19shanbhag/social-distance-detection" target="_blank" rel="noopener">Social Distance Detection using YOLOv3</a></div>
+      <ul class="entry-bullets">
+        <li>Real-time social distancing monitor with <b>YOLOv3</b> and <b>SSD MobileNet</b> person detection behind one <b>Streamlit</b> interface.</li>
+        <li>Applies a <b>perspective transformation</b> to a calibrated bird's-eye view and measures real <b>Euclidean distances</b> in centimetres to classify people into high, low and no-risk zones.</li>
+        <li>Reported <b>92% detection accuracy</b> (95% with transfer learning) in the original project; the 2026 rebuild runs at about 11 frames per second on CPU and has 43 automated tests.</li>
+      </ul>
+      <div class="tags"><span class="tag">Python</span><span class="tag">OpenCV</span><span class="tag">YOLOv3</span><span class="tag">Computer Vision</span></div>
+    </div>
+
+    <div class="project">
+      <div class="project-head">
+        <span class="project-num">03</span>
+      </div>
+      <div class="project-name"><a href="https://github.com/aish-19shanbhag/house-price-prediction-model" target="_blank" rel="noopener">House Price Prediction Model</a></div>
+      <ul class="entry-bullets">
+        <li>Multi-model regression pipeline (Linear, Multiple Linear, Lasso, Gradient Boosting) on <b>21,613</b> King County home sales, with geospatial heat maps and correlation analysis.</li>
+        <li>Faithful reproduction of the original team comparison confirms <b>Lasso Regression</b> as its most reliable model (test R² 0.692).</li>
+        <li>A 2026 rebuild with engineered location and age features and a log-price target reaches <b>R² 0.915</b> with Gradient Boosting (<b>17% lower error</b>), served through a Streamlit price estimator.</li>
+      </ul>
+      <div class="tags"><span class="tag">Python</span><span class="tag">scikit-learn</span><span class="tag">Regression</span><span class="tag">Feature Engineering</span></div>
+    </div>
+
+    <div class="project">
+      <div class="project-head">
+        <span class="project-num">04</span>
+      </div>
+      <div class="project-name"><a href="https://github.com/aish-19shanbhag/warehouse-management-system" target="_blank" rel="noopener">Warehouse Management System</a></div>
+      <ul class="entry-bullets">
+        <li>Object-oriented warehouse inventory system in <b>C++</b>: a <code>Stock</code> class and inventory operations (add, withdraw, refill, remove).</li>
+        <li><b>Role-based access control</b> for three user types (Supplier, Customer, Picker), now with salted SHA-256 logins and a single permission matrix.</li>
+        <li>Original course testing: <b>29 test cases</b>, 82.8% pass rate. The 2026 C++17 refactor adds <b>78 automated tests</b>, all passing in GitHub Actions CI.</li>
+      </ul>
+      <div class="tags"><span class="tag">C++17</span><span class="tag">OOP</span><span class="tag">CMake</span><span class="tag">Unit Testing</span></div>
+    </div>
+  </section>
+
+  <section id="recognition" class="reveal">
+    <p class="section-label">Recognition</p>
+    <div class="what-grid">
+      <div class="what-card">
+        <div class="what-num">Keynote Speaker</div>
+        <h3>MLDS Conference</h3>
+        <p>Addressed an audience of 500+ attendees, presenting workflow developments and managing live audience inquiries.</p>
+      </div>
+      <div class="what-card">
+        <div class="what-num">Societe Generale Spot Award</div>
+        <h3>Individual recognition</h3>
+        <p>Awarded for outstanding performance, attention to detail, and cross-functional workflow management.</p>
+      </div>
+      <div class="what-card">
+        <div class="what-num">Certifications</div>
+        <h3>Google Data Analytics · Snowflake</h3>
+        <p>Google Data Analytics (Coursera) and Introduction to Snowflake (DataCamp).</p>
+      </div>
+    </div>
+    <p style="color:var(--slate); font-size:15px; margin-top:28px;">Beyond the desk, I've led community data-literacy programs, coordinated university tech events, and I'm conversational in five languages: English, Hindi, Kannada, Konkani, and Sanskrit.</p>
+  </section>
+
+  <section id="contact" class="reveal">
+    <p class="section-label">Get In Touch</p>
+    <p class="contact-title">Let's <em>Talk.</em></p>
+    <p class="contact-sub">Reach out, I'd love to connect.</p>
+    <div class="contact-links">
+      <a href="mailto:aishwaryaramanath.shanbhag@sjsu.edu">Email</a>
+      <a href="https://www.linkedin.com/in/aishwarya-ramanath-shanbhag-452255185/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/aish-19shanbhag" target="_blank" rel="noopener">GitHub</a>
+      <a href="resume/Aishwarya_DataScientist_Resume.pdf" target="_blank" rel="noopener" class="btn-primary">Resume</a>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 Aishwarya Ramanath Shanbhag</p>
+    <p>Built with plain HTML/CSS</p>
+  </footer>
+
+</div>
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
