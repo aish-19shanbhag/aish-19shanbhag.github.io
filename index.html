@@ -162,7 +162,7 @@
   <header>
     <p class="eyebrow">Based in San Jose, CA</p>
     <h1 class="name">Aishwarya Ramanath Shanbhag</h1>
-    <p class="role">Data Scientist specializing in fraud detection and financial crime risk analytics, with 4+ years across two banks. Now pursuing an MS in Computer Science at San José State University.</p>
+    <p class="role">Data Scientist specializing in fraud detection and financial crime risk analytics, with 4 years across two banks. Now pursuing an MS in Computer Science at San José State University.</p>
     <div class="hero-actions">
       <a href="resume/Aishwarya_DataScientist_Resume.pdf" target="_blank" rel="noopener" class="btn-primary">Download Resume</a>
       <div class="hero-links">
@@ -183,7 +183,7 @@
       </div>
       <div class="edu-card">
         <div class="edu-degree">B.Tech. Computer Science &amp; Engineering</div>
-        <div class="edu-school">PES University · GPA 3.6/4.0</div>
+        <div class="edu-school">PES University · GPA 8.02/10 (≈3.6/4.0)</div>
         <div class="edu-date">Aug 2018 – May 2022 · Bengaluru, India</div>
       </div>
     </div>
@@ -239,7 +239,7 @@
           <li>Shipped new platform features, including <b>search and cloning functionality</b> plus reusable configuration templates, cutting <b>configuration time by 25%</b> for end users.</li>
           <li>Built <b>breakout, filtering, and attribute-selection modules</b> from the ground up, designing the underlying logic and testing each feature thoroughly to increase user productivity.</li>
         </ul>
-        <div class="tags"><span class="tag">Backend Development</span><span class="tag">Debugging</span><span class="tag">REST</span></div>
+        <div class="tags"><span class="tag">Backend Development</span><span class="tag">Debugging</span><span class="tag">Feature Development</span></div>
       </div>
     </div>
   </section>
@@ -273,23 +273,36 @@
       <div class="project-head">
         <span class="project-num">01</span>
       </div>
-      <div class="project-name"><a href="https://github.com/aish-19shanbhag/intrusion-detection-ensemble" target="_blank" rel="noopener">Intrusion Detection Using Ensemble Techniques</a></div>
+      <div class="project-name"><a href="https://github.com/aish-19shanbhag/fraud-scoring-service" target="_blank" rel="noopener">Real-Time Transaction Fraud Scoring Service</a></div>
       <ul class="entry-bullets">
-        <li>Led a team building a multi-class network intrusion detector on NSL-KDD: a <b>Maximum Voting Ensemble</b> of <b>Gaussian Naive Bayes</b>, a <b>Decision Tree</b> and <b>XGBoost</b>.</li>
-        <li>Reaches <b>99.91% accuracy</b> with a <b>0.06% false positive rate</b> on held-out traffic, using mutual-information feature selection (41 to 30 features) and cross-validated tuning.</li>
-        <li>Benchmarked against every base classifier; the ensemble scores highest on the harder official NSL-KDD test set. Scores a connection in about <b>5 ms</b>. Streamlit demo, tests and a one-click Colab notebook.</li>
+        <li>Full-stack fraud detection system that scores card transactions in real time and decides <b>approve, review or block</b>, with plain-English reasons for every alert.</li>
+        <li>A <b>FastAPI</b> service computes <b>15 behavioral features</b> from a <b>Redis feature store</b> and scores them with a gradient-boosted model in about <b>11 ms (p95)</b>; <b>PR-AUC 0.93</b> vs 0.72 for logistic regression.</li>
+        <li>Precision-tuned thresholds auto-block fraud at <b>92% precision</b> and <b>84% recall</b>; a <b>React</b> dashboard streams live alerts over WebSockets. Dockerized, with GitHub Actions CI (19 tests, 94% coverage).</li>
       </ul>
-      <div class="tags"><span class="tag">Python</span><span class="tag">XGBoost</span><span class="tag">scikit-learn</span><span class="tag">Ensemble Learning</span></div>
+      <div class="tags"><span class="tag">Python</span><span class="tag">FastAPI</span><span class="tag">Redis</span><span class="tag">PostgreSQL</span><span class="tag">React</span><span class="tag">Docker</span></div>
     </div>
 
     <div class="project">
       <div class="project-head">
         <span class="project-num">02</span>
       </div>
+      <div class="project-name"><a href="https://github.com/aish-19shanbhag/intrusion-detection-ensemble" target="_blank" rel="noopener">Intrusion Detection Using Ensemble Techniques</a></div>
+      <ul class="entry-bullets">
+        <li>Led a team building a multi-class network intrusion detector on NSL-KDD: a <b>Maximum Voting Ensemble</b> of <b>Gaussian Naive Bayes</b>, a <b>Decision Tree</b> and <b>XGBoost</b>.</li>
+        <li>Reaches <b>99.91% accuracy</b> with a <b>0.06% false positive rate</b> on held-out traffic, using mutual-information feature selection (41 to 30 features) and cross-validated tuning.</li>
+        <li>Benchmarked against every base classifier; the ensemble scores highest on the harder official NSL-KDD test set (<b>77.9%</b>, including unseen attack types). Scores a connection in about <b>5 ms</b>. Streamlit demo, tests and a one-click Colab notebook.</li>
+      </ul>
+      <div class="tags"><span class="tag">Python</span><span class="tag">XGBoost</span><span class="tag">scikit-learn</span><span class="tag">Ensemble Learning</span></div>
+    </div>
+
+    <div class="project">
+      <div class="project-head">
+        <span class="project-num">03</span>
+      </div>
       <div class="project-name"><a href="https://github.com/aish-19shanbhag/social-distance-detection" target="_blank" rel="noopener">Social Distance Detection using YOLOv3</a></div>
       <ul class="entry-bullets">
         <li>Real-time social distancing monitor with <b>YOLOv3</b> and <b>SSD MobileNet</b> person detection behind one <b>Streamlit</b> interface.</li>
-        <li>Applies a <b>perspective transformation</b> to a calibrated bird's-eye view and measures real <b>Euclidean distances</b> in centimetres to classify people into high, low and no-risk zones.</li>
+        <li>Applies a <b>perspective transformation</b> to a calibrated bird's-eye view and measures real <b>Euclidean distances</b> in centimeters to classify people into high, low and no-risk zones.</li>
         <li>Reported <b>92% detection accuracy</b> (95% with transfer learning) in the original project; the 2026 rebuild runs at about 11 frames per second on CPU and has 43 automated tests.</li>
       </ul>
       <div class="tags"><span class="tag">Python</span><span class="tag">OpenCV</span><span class="tag">YOLOv3</span><span class="tag">Computer Vision</span></div>
@@ -297,26 +310,26 @@
 
     <div class="project">
       <div class="project-head">
-        <span class="project-num">03</span>
+        <span class="project-num">04</span>
       </div>
       <div class="project-name"><a href="https://github.com/aish-19shanbhag/house-price-prediction-model" target="_blank" rel="noopener">House Price Prediction Model</a></div>
       <ul class="entry-bullets">
         <li>Multi-model regression pipeline (Linear, Multiple Linear, Lasso, Gradient Boosting) on <b>21,613</b> King County home sales, with geospatial heat maps and correlation analysis.</li>
         <li>Faithful reproduction of the original team comparison confirms <b>Lasso Regression</b> as its most reliable model (test R² 0.692).</li>
-        <li>A 2026 rebuild with engineered location and age features and a log-price target reaches <b>R² 0.915</b> with Gradient Boosting (<b>17% lower error</b>), served through a Streamlit price estimator.</li>
+        <li>A 2026 rebuild with engineered location and age features and a log-price target reaches <b>R² 0.915</b> with Gradient Boosting, served through a Streamlit price estimator.</li>
       </ul>
       <div class="tags"><span class="tag">Python</span><span class="tag">scikit-learn</span><span class="tag">Regression</span><span class="tag">Feature Engineering</span></div>
     </div>
 
     <div class="project">
       <div class="project-head">
-        <span class="project-num">04</span>
+        <span class="project-num">05</span>
       </div>
       <div class="project-name"><a href="https://github.com/aish-19shanbhag/warehouse-management-system" target="_blank" rel="noopener">Warehouse Management System</a></div>
       <ul class="entry-bullets">
         <li>Object-oriented warehouse inventory system in <b>C++</b>: a <code>Stock</code> class and inventory operations (add, withdraw, refill, remove).</li>
         <li><b>Role-based access control</b> for three user types (Supplier, Customer, Picker), now with salted SHA-256 logins and a single permission matrix.</li>
-        <li>Original course testing: <b>29 test cases</b>, 82.8% pass rate. The 2026 C++17 refactor adds <b>78 automated tests</b>, all passing in GitHub Actions CI.</li>
+        <li>Original course testing: <b>29 test cases</b> that surfaced payment-workflow defects. The 2026 C++17 refactor adds <b>78 automated tests</b>, all passing in GitHub Actions CI.</li>
       </ul>
       <div class="tags"><span class="tag">C++17</span><span class="tag">OOP</span><span class="tag">CMake</span><span class="tag">Unit Testing</span></div>
     </div>
@@ -336,12 +349,17 @@
         <p>Awarded for outstanding performance, attention to detail, and cross-functional workflow management.</p>
       </div>
       <div class="what-card">
+        <div class="what-num">NatWest Group Spot Award</div>
+        <h3>Individual recognition</h3>
+        <p>Awarded for outstanding performance on the Onboarding Fraud Detection &amp; Prevention Squad.</p>
+      </div>
+      <div class="what-card">
         <div class="what-num">Certifications</div>
-        <h3>Google Data Analytics · Snowflake</h3>
-        <p>Google Data Analytics (Coursera) and Introduction to Snowflake (DataCamp).</p>
+        <h3>Google Data Analytics · Snowflake · IBM Data Science</h3>
+        <p>Google Data Analytics (Coursera), Introduction to Snowflake (DataCamp), and IBM Data Science Professional Certificate (Coursera, in progress).</p>
       </div>
     </div>
-    <p style="color:var(--slate); font-size:15px; margin-top:28px;">Beyond the desk, I've led community data-literacy programs, coordinated university tech events, and I'm conversational in five languages: English, Hindi, Kannada, Konkani, and Sanskrit.</p>
+    <p style="color:var(--slate); font-size:15px; margin-top:28px;">Beyond the desk, I've led community data-literacy programs, coordinated university tech events, and I speak English, Hindi, Kannada and Konkani, with basic Sanskrit.</p>
   </section>
 
   <section id="contact" class="reveal">
